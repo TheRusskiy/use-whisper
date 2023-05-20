@@ -190,7 +190,7 @@ export const useWhisper: UseWhisperHook = (config) => {
         }
         if (!encoder.current) {
           const { Mp3Encoder } = await import('lamejs')
-          encoder.current = new Mp3Encoder(1, 44100, 96)
+          encoder.current = new Mp3Encoder(1, 16000, 32)
         }
         const recordState = await recorder.current.getState()
         if (recordState === 'inactive' || recordState === 'stopped') {
